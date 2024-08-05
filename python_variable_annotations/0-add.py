@@ -1,13 +1,21 @@
 #!/usr/bin/env python3
 """
-This module contains functions for basic mathematical operations.
+Bu modül temel matematiksel işlemler için fonksiyonlar içerir.
 """
 
 def add(a: float, b: float) -> float:
     """
-    Add two floating point numbers and return the result.
+    İki ondalıklı sayıyı toplar ve sonucu döndürür.
+
+    Parametreler:
+    a (float): İlk sayı.
+    b (float): İkinci sayı.
+
+    Dönüş:
+    float: İki sayının toplamı.
     """
     return a + b
+
 
 
 
