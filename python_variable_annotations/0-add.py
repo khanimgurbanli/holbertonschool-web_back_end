@@ -1,13 +1,15 @@
-#!/usr/bin/env python3
-""" Basic annotations - add """
+#!/usr/bin/python3
 
+"""
+This module contains functions for basic mathematical operations.
+"""
 
 def add(a: float, b: float) -> float:
-    """ Type-annotated function add that takes a float arguments.
-        Args:
-            a: float type.
-            b: float type.
-        Return:
-            sum as a float type.
+    """
+    Add two floating point numbers and return the result.
     """
     return a + b
+
+
+
+
