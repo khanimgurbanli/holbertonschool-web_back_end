@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 
-from typing import Sequence, Optional, Any
+"""This module contains a function to create a multiplier function."""
 
+from typing import Sequence, Optional, Any
 
 def safe_first_element(lst: Sequence[Any]) -> Optional[Any]:
     """
