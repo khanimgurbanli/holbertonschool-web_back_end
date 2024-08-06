@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
 
+'''
+ Description: Annotate the below function’s parameters and
+                 return values with the appropriate types
+'''
+
 from typing import Mapping, TypeVar, Any, Union
 
 # Define a type variable that can be any type
