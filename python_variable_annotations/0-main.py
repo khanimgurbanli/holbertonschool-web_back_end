@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import math
 
-concat = __import__('2-floor').floor
+fl = __import__('3-to_str').to_str
 
-print(concat(25.9202) == math.floor(25.9202))
-print(concat.__annotations__)
+print(fl(25.9202) == str(25.9202))
+print(fl.__annotations__)
