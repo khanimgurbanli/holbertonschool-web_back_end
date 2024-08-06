@@ -1,7 +1,5 @@
 #!/usr/bin/env python3
 
-from typing import Tuple, Union
-
 """This module contains a function to sum up a list of integers and floating-point numbers."""
 
 from typing import Union, Tuple
