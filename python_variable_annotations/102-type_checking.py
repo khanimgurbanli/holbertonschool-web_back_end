@@ -1,19 +1,16 @@
 #!/usr/bin/env python3
 
-''' Description: Use mypy to validate the following piece of code
+""" Description: Use mypy to validate the following piece of code
                  and apply any necessary changes.
     Arguments: lst: Tuple, factor: int = 2
-'''
+"""
 
 from typing import Union, Any, Mapping, Tuple, List
 
 
 def zoom_array(lst: Tuple, factor: int = 2) -> List:
-    ''' Variable Annotation for list '''
-    zoomed_in: List = [
-        item for item in lst
-        for i in range(factor)
-    ]
+    """Variable Annotation for list"""
+    zoomed_in: List = [item for item in lst for i in range(factor)]
     return zoomed_in
 
 
