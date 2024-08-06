@@ -1,6 +1,7 @@
+#!/usr/bin/env python3
+
 from typing import Sequence, Optional, Any
 
-#!/usr/bin/env python3
 
 def safe_first_element(lst: Sequence[Any]) -> Optional[Any]:
     """
