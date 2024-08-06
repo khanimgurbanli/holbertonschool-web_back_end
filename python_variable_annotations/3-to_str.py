@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-""" Description:takes a float n as argument and returns the string
+""" Details:takes a float n as argument and returns the string
     representation of the float.
     Arguments: n: float
 """
