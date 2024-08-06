@@ -28,5 +28,4 @@ async def wait_n(n: int, max_delay: int = 10) -> List[float]:
     for spawn in spawn_ls:
         await spawn
 
-    # Use a min-heap approach to sort delays without using sort()
     return delay_ls
