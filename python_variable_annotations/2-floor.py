@@ -1,9 +1,13 @@
 #!/usr/bin/env python3
-""" Description:takes a float n as argument and returns the floor of the float
-    Arguments: n: float
+
+"""
+This module contains a function to compute the floor of a floating point number.
 """
 
 
 def floor(n: float) -> int:
-    """Return largest int value less than or equal to n."""
+    """Return largest int value less than or equal to n
+     :param n: float number
+    :return: floor of n as an integer
+    """
     return int(n) if n >= 0 else int(n) - 1
