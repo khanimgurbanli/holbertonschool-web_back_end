@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
+
 """
-    Module with typing Python
+This module contains functions for basic mathematical operations.
 """
+
 def add(a: float, b: float) -> float:
     """
-        Args:
-            a: The first parameter
-            b: The second parameter
-        Return:
-            Sum of two floats
+    Add two floating point numbers and return the result.
+    :param a: first floating point number
+    :param b: second floating point number
+    :return: the sum of a and b
     """
-    return (a + b)
+    return a + b
