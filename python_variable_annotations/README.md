@@ -1,7 +1,7 @@
 
 # Holberton Task - Python - Variable Annotations
 
-![copy-repo-link](./images/holberton_logo.jpg)
+![copy-repo-link](../images/holberton_logo.jpg)
            
 
 ## Description
