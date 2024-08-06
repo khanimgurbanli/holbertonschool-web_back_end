@@ -1,16 +1,14 @@
 #!/usr/bin/env python3
+""" Details: Augment the follow code the correct
+                 duck type annotation
+    Argument: lst: Sequence[Any]
+"""
 
-"""This module contains a function to create a multiplier function."""
-
-from typing import Sequence, Optional, Any
+from typing import Sequence, Any, Union
 
 
-def safe_first_element(lst: Sequence[Any]) -> Optional[Any]:
-    """
-    Args: lst (Sequence[Any]): A sequence (list, tuple, etc.) of any type of elements.
-
-    Returns:  Optional[Any]: The first element of the sequence if it exists, otherwise None.
-    """
+def safe_first_element(lst: Sequence[Any]) -> Union[Any, None]:
+    """Return the first element of lst that there is any, otherwise None"""
     if lst:
         return lst[0]
     else:
