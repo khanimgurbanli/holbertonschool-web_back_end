@@ -5,6 +5,7 @@ This module contains functions for summing up a list of floating-point numbers.
 
 from typing import List
 
+
 def sum_list(input_list: List[float]) -> float:
     """
     Sums up the floating-point numbers in a list and returns the result.

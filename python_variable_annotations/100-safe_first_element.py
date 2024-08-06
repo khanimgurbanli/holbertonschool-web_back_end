@@ -4,6 +4,7 @@
 
 from typing import Sequence, Optional, Any
 
+
 def safe_first_element(lst: Sequence[Any]) -> Optional[Any]:
     """
     Return the first element of the sequence if it exists, otherwise return None.
