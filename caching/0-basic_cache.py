@@ -7,7 +7,7 @@ BaseCaching = __import__("base_caching").BaseCaching
 
 
 class BasicCache(BaseCaching):
-    """Basic cache.
+    """ Basic cache.
     Inherits from class BaseCaching.
     Attributes:
       put - method that adds a key-value pair to cache
@@ -16,7 +16,7 @@ class BasicCache(BaseCaching):
 
 
 def put(self, key, item):
-    """Add key-value pair to cache.
+    """ Add key-value pair to cache.
     If 'key' or 'item' is None, do nothing
     """
     if key is not None and item is not None:
@@ -24,7 +24,7 @@ def put(self, key, item):
 
 
 def get(self, key):
-    """Return value stored in 'key' of cache.
+    """ Return value stored in 'key' of cache.
     If key is None or does not exist in cache, return None
     """
     if key is not None and key in self.cache_data:
