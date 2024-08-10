@@ -13,7 +13,7 @@ class LFUCache(BaseCaching):
     accommodate for the new one.
     Attributes:
       __init__ - method that initializes class instance
-      put - method that adds a key-value pair to cache
+      put - method that adds a key/value pair to cache
       get - method that retrieves a key/value pair from cache"""
 
     def __init__(self):
@@ -24,7 +24,7 @@ class LFUCache(BaseCaching):
 
     def put(self, key, item):
         """Add key/value pair to cache data.
-        If cache is at max capacity BaseCaching.MAX_ITEMS,
+        If cache is at max capacity (specified by BaseCaching.MAX_ITEMS),
         discard least frequently used entry to accommodate new entry."""
 
         if key is not None and item is not None:
