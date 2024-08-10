@@ -49,16 +49,11 @@ class LFUCache(BaseCaching):
 
     def get(self, key):
         """Return the value linked"""
-        if key is None or key not in self.lru_cache:
-            return None
-
-        value = self.lru_cache[key]
-        self.lru_cache.move_to_end(key)
-
-        # Update frequency
-        if key in self.lfu_cache:
-            self.lfu_cache[key] += 1
-        else:
-            self.lfu_cache[key] = 1
-
-        return value
+        if key in self.lru_cache:
+            value = self.lru_cache[key]
+            self.lru_cache.move_to_end(key)
+            if key in self.lfu_cache:
+                self.lfu_cache[key] += 1
+            else:
+                self.lfu_cache[key] = 1
+            return value
