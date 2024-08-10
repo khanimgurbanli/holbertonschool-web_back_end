@@ -1,10 +1,11 @@
 #!/usr/bin/python3
-""" LFU Caching """
+""" LFU Caching: Create a class LFUCache that inherits from BaseCaching"""
+
 BaseCaching = __import__("base_caching").BaseCaching
 
 
 class LFUCache(BaseCaching):
-    """Class that inherits from BaseCaching and is a caching system"""
+    """An LFU cache"""
 
     def __init__(self):
         """Initialize class instance."""
@@ -13,7 +14,8 @@ class LFUCache(BaseCaching):
         self.uses = {}
 
     def put(self, key, item):
-        """Assign to the dictionary, LFU algorithm"""
+        """Add key/value pair to cache data."""
+
         if key is not None and item is not None:
             if len(self.keys) == BaseCaching.MAX_ITEMS and key not in self.keys:
                 discard = self.keys.pop(self.keys.index(self.findLFU()))
@@ -29,9 +31,20 @@ class LFUCache(BaseCaching):
                 self.uses[key] += 1
 
     def get(self, key):
-        """Return the value linked"""
+        """Return value stored in `key` key of cache"""
         if key is not None and key in self.cache_data:
             self.keys.append(self.keys.pop(self.keys.index(key)))
             self.uses[key] += 1
             return self.cache_data[key]
         return None
+
+    def findLFU(self):
+        """Return key of least frequently used item in cache"""
+        items = list(self.uses.items())
+        freqs = [item[1] for item in items]
+        least = min(freqs)
+
+        lfus = [item[0] for item in items if item[1] == least]
+        for key in self.keys:
+            if key in lfus:
+                return key
