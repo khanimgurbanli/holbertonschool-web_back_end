@@ -1,16 +1,17 @@
 #!/usr/bin/python3
-""" LFU Caching: Create a class LFUCache that inherits from BaseCaching
-                 and is a caching system """
+""" LFU Caching: Create a class LRUCache that inherits from BaseCaching
+                 and is a caching system
+"""
 
 BaseCaching = __import__("base_caching").BaseCaching
 
 
 class LFUCache(BaseCaching):
-    """An LFU cache.
+    """LFU cache
     Inherits all behaviors from BaseCaching except, upon any attempt to add
     an entry to the cache when it is at max capacity (as specified by
     BaseCaching.MAX_ITEMS), it discards the least frequently used entry to
-    accommodate for the new one.
+    accommodate for the new one
     Attributes:
       __init__ - method that initializes class instance
       put - method that adds a key/value pair to cache
