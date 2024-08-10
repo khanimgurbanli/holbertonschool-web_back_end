@@ -42,8 +42,8 @@ class LFUCache(BaseCaching):
                 self.uses[key] += 1
 
     def get(self, key):
-        """Return value stored in key of cache.
-        If key is None or does not exist in cache, return None"""
+        """Return value stored in `key` key of cache.
+        If key is None or does not exist in cache, return None."""
         if key is not None and key in self.cache_data:
             self.keys.append(self.keys.pop(self.keys.index(key)))
             self.uses[key] += 1
@@ -53,7 +53,7 @@ class LFUCache(BaseCaching):
     def findLFU(self):
         """Return key of least frequently used item in cache.
         If multiple items have the same amount of uses, return the least
-        recently used one"""
+        recently used one."""
         items = list(self.uses.items())
         freqs = [item[1] for item in items]
         least = min(freqs)
