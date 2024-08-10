@@ -38,7 +38,7 @@ class LFUCache(BaseCaching):
             return self.cache_data[key]
         return None
 
-    def findLFU(self):
+    def findlfu(self):
         """Return key of least frequently used item"""
         items = list(self.uses.items())
         freqs = [item[1] for item in items]
