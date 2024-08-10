@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" LFU Caching: Create a class LFUCache that inherits from BaseCaching"""
+""" LFUCache that inherits from BaseCaching"""
 
 BaseCaching = __import__("base_caching").BaseCaching
 
