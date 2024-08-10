@@ -9,7 +9,8 @@ BaseCaching = __import__("base_caching").BaseCaching
 class MRUCache(BaseCaching):
     """MRU Cache
     Inherits all behaviors from BaseCaching except, upon any attempt to
-    add an entry to the cache when it is at max capacity, it discards the most recently used entry to
+    add an entry to the cache when it is at max capacity (as specified by
+    BaseCaching.MAX_ITEMS), it discards the most recently used entry to
     accommodate for the new one
     Attributes:
       __init__ - method that initializes class instance
@@ -17,7 +18,7 @@ class MRUCache(BaseCaching):
       get - method that retrieves a key/value pair from cache"""
 
     def __init__(self):
-        """Initialize class instance"""
+        """Initialize class instance."""
         super().__init__()
         self.keys = []
 
