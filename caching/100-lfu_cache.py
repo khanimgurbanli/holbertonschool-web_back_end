@@ -18,7 +18,7 @@ class LFUCache(BaseCaching):
 
         if key is not None and item is not None:
             if len(self.keys) == BaseCaching.MAX_ITEMS and key not in self.keys:
-                discard = self.keys.pop(self.keys.index(self.findLFU()))
+                discard = self.keys.pop(self.keys.index(self.findlfu()))
                 del self.cache_data[discard]
                 del self.uses[discard]
                 print("DISCARD: {:s}".format(discard))
