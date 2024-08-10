@@ -1,12 +1,12 @@
 #!/usr/bin/python3
-""" LFU Caching: Create a class LFUCache that inherits from BaseCaching
-                 and is a caching system """
+""" LFU Caching Create a class LFUCache that inherits from BaseCaching
+                 and is a caching system"""
 
 BaseCaching = __import__("base_caching").BaseCaching
 
 
 class LFUCache(BaseCaching):
-    """An LFU cache.
+    """An LFU
     Inherits all behaviors from BaseCaching except, upon any attempt to add
     an entry to the cache when it is at max capacity (as specified by
     BaseCaching.MAX_ITEMS), it discards the least frequently used entry to
@@ -23,7 +23,7 @@ class LFUCache(BaseCaching):
         self.uses = {}
 
     def put(self, key, item):
-        """Add key/value pair to cache data.
+        """Add key/value pair to cache data
         If cache is at max capacity (specified by BaseCaching.MAX_ITEMS),
         discard least frequently used entry to accommodate new entry."""
 
@@ -53,7 +53,7 @@ class LFUCache(BaseCaching):
     def findLFU(self):
         """Return key of least frequently used item in cache.
         If multiple items have the same amount of uses, return the least
-        recently used one."""
+        recently used one"""
         items = list(self.uses.items())
         freqs = [item[1] for item in items]
         least = min(freqs)
