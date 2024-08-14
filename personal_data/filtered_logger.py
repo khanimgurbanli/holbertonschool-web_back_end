@@ -7,7 +7,8 @@ from typing import List
 def filter_datum(
         fields: List[str], redaction: str, message: str, separator: str
 ) -> str:
-    """Description: Writed a function called filter_datum that
+    """
+    Description: Writed a function called filter_datum that
                  returns the log message obfuscated:
 
     Arguments:
@@ -20,8 +21,7 @@ def filter_datum(
     The function should use a regex to replace occurrences of certain
     field values.
     filter_datum should be less than 5 lines long and use re.sub to
-    perform the substitution with a single regex.
-    """
+    perform the substitution with a single regex"""
     return re.sub(
         f"({'|'.join(fields)})=.+?{separator}", r"\1=" + redaction + separator, message
     )
