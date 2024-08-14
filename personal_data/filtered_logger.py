@@ -1,6 +1,4 @@
 #!/usr/bin/python3
-""" Basic Dictionary: The function should use a regex to replace occurrences of certain field values
-"""
 
 import re
 from typing import List
