@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+""" Regex-ing, Log formatter, Create logger, Connect to secure database,
+    Read and filter data """
+
+PII_FIELDS = ("name", "email", "phone", "ssn", "password")
+""" containing the fields from user_data.csv that are considered PII. """
 
 import re
 from typing import List
@@ -9,19 +14,7 @@ def filter_datum(
 ) -> str:
     """
     Description: Writed a function called filter_datum that
-                 returns the log message obfuscated:
-
-    Arguments:
-        fields: a list of strings all fields to obfuscate
-        redaction: a string by what the field will be
-                   obfuscated
-        message: a string the log line
-        separator: a string  by which character is
-                       separating all fields in the log line (message)
-    The function should use a regex to replace occurrences of certain
-    field values.
-    filter_datum should be less than 5 lines long and use re.sub to
-    perform the substitution with a single regex"""
+                 returns the log message obfuscated"""
     return re.sub(
         f"({'|'.join(fields)})=.+?{separator}", r"\1=" + redaction + separator, message
     )
