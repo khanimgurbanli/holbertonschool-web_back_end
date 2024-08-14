@@ -22,5 +22,6 @@ def filter_datum(
     filter_datum should be less than 5 lines long and use re.sub to
     perform the substitution with a single regex.
     """
-    pattern = f"({'|'.join(fields)})=.+?{separator}"
-    return re.sub(pattern, r"\1=" + redaction + separator, message)
+    return re.sub(
+        f"({'|'.join(fields)})=.+?{separator}", r"\1=" + redaction + separator, message
+    )
