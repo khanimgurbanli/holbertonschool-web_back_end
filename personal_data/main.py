@@ -1,15 +1,13 @@
 #!/usr/bin/env python3
-"""
-Main file
-"""
+'''Module for encrypting'''
+import bcrypt
 
-filter_datum = __import__("filtered_logger").filter_datum
 
-fields = ["password", "date_of_birth"]
-messages = [
-    "name=egg;email=eggmin@eggsample.com;password=eggcellent;date_of_birth=12/12/1986;",
-    "name=bob;email=bob@dylan.com;password=bobbycool;date_of_birth=03/04/1993;",
-]
+def hash_password(password: str) -> bytes:
+    '''Returns hash'''
+    return bcrypt.hashpw(password.encode(), bcrypt.gensalt())
 
-for message in messages:
-    print(filter_datum(fields, "xxx", message, ";"))
+
+def is_valid(hashed_password: bytes, password: str) -> bool:
+    '''Checks if equal'''
+    return bcrypt.checkpw(password.encode(), hashed_password)
