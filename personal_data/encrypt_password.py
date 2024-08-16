@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-'''Module for encrypting'''
+'''Module for encryptinging'''
 import bcrypt
 
 
