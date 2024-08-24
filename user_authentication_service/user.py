@@ -15,4 +15,3 @@ class User(Base):
     session_id = Column(String, nullable=True)
     reset_token = Column(String, nullable=True)
 
-
