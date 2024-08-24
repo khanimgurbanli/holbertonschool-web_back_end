@@ -9,7 +9,7 @@ from db import DB
 from user import User
 
 
-def _hash_password(password: str) -> bytes:
+def _hash_password(password: str) -> str:
     """ takes in a password string arguments and returns a string
         The returned string is a salted hash of the input password,
         hashed with bcrypt.hashpw """
@@ -62,7 +62,7 @@ class Auth:
             self._db.update_user(user.id, session_id=session_id)
             return session_id
 
-    def get_user_from_session_id(self, session_id: str) -> User | None:
+    def get_user_from_session_id(self, session_id: str) -> str:
         """ returns a string or None """
         try:
             user = self._db.find_user_by(session_id=session_id)
