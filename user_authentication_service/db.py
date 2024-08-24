@@ -9,6 +9,7 @@ from user import Base, User
 
 class DB:
     """ class """
+
     def __init__(self):
         """ constructor """
         self._engine = create_engine("sqlite:///a.db", echo=False)
