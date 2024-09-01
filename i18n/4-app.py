@@ -1,41 +1,53 @@
 #!/usr/bin/env python3
-""" Basic Flask app, Basic Babel setup, Get locale from request,
-    Parametrize templates, Force locale with URL parameter """
+"""Task 4: Force locale with URL parameter
+"""
+
 from flask import Flask, render_template, request
 from flask_babel import Babel
 
-app = Flask(__name__)
-babel = Babel(app)
-""" instantiate the Babel object """
 
+class Config:
+    """Config class"""
 
-class Config(object):
-    """config class"""
-
+    DEBUG = True
     LANGUAGES = ["en", "fr"]
     BABEL_DEFAULT_LOCALE = "en"
     BABEL_DEFAULT_TIMEZONE = "UTC"
 
 
+app = Flask(__name__)
 app.config.from_object(Config)
-""" Use that class as config for Flask app """
-
-
-@app.route("/")
-def root():
-    """basic Flask app"""
-    return render_template("4-index.html")
+app.url_map.strict_slashes = False
+babel = Babel(app)
 
 
 @babel.localeselector
-def get_locale():
-    """to determine the best match with our supported languages"""
-    localLang = request.args.get("locale")
-    supportLang = app.config["LANGUAGES"]
-    if localLang in supportLang:
-        return localLang
-    else:
-        return request.accept_languages.best_match(app.config["LANGUAGES"])
+def get_locale() -> str:
+    """Retrieves the locale for a web page.
+
+    Returns:
+        str: best match
+    """
+    locale = request.args.get("locale")
+    if locale in app.config["LANGUAGES"]:
+        return locale
+    return request.accept_languages.best_match(app.config["LANGUAGES"])
+
+
+@app.route("/")
+def index() -> str:
+    """default route
+
+    Returns:
+        html: homepage
+    """
+    return render_template("4-index.html")
+
+
+# uncomment this line and comment the @babel.localeselector
+# you get this error:
+# AttributeError: 'Babel' object has no attribute 'localeselector'
+# babel.init_app(app, locale_selector=get_locale)
 
 
 if __name__ == "__main__":
