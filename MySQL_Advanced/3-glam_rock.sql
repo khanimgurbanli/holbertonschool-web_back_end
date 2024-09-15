@@ -5,4 +5,3 @@ SELECT band_name,
 FROM metal_bands
 WHERE style LIKE '%Glam rock%'
 ORDER BY lifespan DESC;
- 
