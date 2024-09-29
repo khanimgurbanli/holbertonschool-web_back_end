@@ -1,1 +1,3 @@
-NoSQL readme
+![Project Logo](../assets/LogoHolberton.png)
+
+Holberton School 
