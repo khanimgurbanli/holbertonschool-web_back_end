@@ -3,27 +3,30 @@
 """
 from pymongo import MongoClient
 
+# Connect to MongoDB (adjust connection string as needed)
+client = MongoClient("mongodb://localhost:27017/")
 
-METHODS = ["GET", "POST", "PUT", "PATCH", "DELETE"]
+# Access the database and collection
+db = client["logs"]
+collection = db["nginx"]
 
+# Total number of logs
+log_count = collection.count_documents({})
 
-def log_stats(mongo_collection, option=None):
-    """script that provides some stats about Nginx logs stored in MongoDB"""
-    items = {}
-    if option:
-        value = mongo_collection.count_documents({"method": {"$regex": option}})
-        print(f"\tmethod {option}: {value}")
-        return
+# HTTP methods to check
+methods = ["GET", "POST", "PUT", "PATCH", "DELETE"]
 
-    result = mongo_collection.count_documents(items)
-    print(f"{result} logs")
-    print("Methods:")
-    for method in METHODS:
-        log_stats(nginx_collection, method)
-    status_check = mongo_collection.count_documents({"path": "/status"})
-    print(f"{status_check} status check")
+# Count for each method
+method_counts = {
+    method: collection.count_documents({"method": method}) for method in methods
+}
 
+# Count documents with method GET and path /status
+status_check_count = collection.count_documents({"method": "GET", "path": "/status"})
 
-if __name__ == "__main__":
-    nginx_collection = MongoClient("mongodb://127.0.0.1:27017").logs.nginx
-    log_stats(nginx_collection)
+# Output format as per the example
+print(f"{log_count} logs")
+print("Methods:")
+for method in methods:
+    print(f"\tmethod {method}: {method_counts[method]}")
+print(f"{status_check_count} status check")
