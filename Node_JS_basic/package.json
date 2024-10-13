@@ -2,9 +2,9 @@
   "name": "node_js_basic",
   "version": "1.0.0",
   "description": "nodeJS readme",
-  "main": "0-console.js",
+  "main": "0-main.js",
   "scripts": {
-    "start": "node 0-main.js",
+    "start": "node 0-console.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
