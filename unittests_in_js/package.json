@@ -4,7 +4,7 @@
   "description": "- By: Johann Kerbrat, Engineering Manager at Uber Works\r - Weight: 1\r - Project will start Aug 16, 2022 12:00 AM, must end by Aug 19, 2022 12:00 AM\r - will be released at Aug 17, 2022 12:00 PM\r - An auto review will be launched at the deadline",
   "main": "0-calcul.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "keywords": [],
   "author": "",
