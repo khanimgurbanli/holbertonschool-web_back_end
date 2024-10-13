@@ -1,9 +1,9 @@
 {
-  "name": "8-api",
+  "name": "9-api",
   "version": "1.0.0",
   "main": "api.js",
   "scripts": {
-    "test": "mochacd"
+    "test": "mocha"
   },
   "keywords": [],
   "author": "",
